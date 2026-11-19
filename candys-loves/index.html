@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy's Love's - Receitas da Vovó</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="#" class="logo">🍓 Candy's Love's</a>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#categorias">Categorias</a>
+        <button onclick="login()">Login</button>
+        <button onclick="abrirFormulario()">Guardar Receita</button>
+        <a href="#receitas">Nossas Receitas</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="banner" id="inicio">
+        <h1>Receitas da Vovó ❤️</h1>
+        <p>Doces e salgados feitos com amor!</p>
+    </section>
+
+    <section class="secao">
+        <h2>Destaques</h2>
+        <div class="destaques" id="destaques"></div>
+    </section>
+
+    <section class="secao" id="receitas">
+        <div class="titulo-secao">
+            <h2>Receitas Populares</h2>
+            <input type="search" id="pesquisa"
+                placeholder="Pesquisar receita...">
+        </div>
+
+        <div class="filtros" id="categorias">
+            <button onclick="filtrar('Todas')">Todas</button>
+            <button onclick="filtrar('Doces')">Doces</button>
+            <button onclick="filtrar('Salgados')">Salgados</button>
+            <button onclick="filtrar('Bolos')">Bolos</button>
+            <button onclick="filtrar('Outros')">Outros</button>
+        </div>
+
+        <div class="receitas-grid" id="listaReceitas"></div>
+    </section>
+
+</main>
+
+<!-- FORMULÁRIO DE CADASTRO E EDIÇÃO -->
+
+<div class="modal" id="modal">
+    <div class="modal-conteudo">
+
+        <button class="fechar" onclick="fecharFormulario()">×</button>
+
+        <h2 id="tituloFormulario">Guardar Receita 🍰</h2>
+
+        <form id="formReceita">
+
+            <input type="hidden" id="idReceita">
+
+            <label>Nome da receita</label>
+            <input type="text" id="nome" required
+                placeholder="Ex: Bolo de chocolate">
+
+            <label>Descrição</label>
+            <textarea id="descricao" required
+                placeholder="Conte um pouco sobre a receita"></textarea>
+
+            <label>Categoria</label>
+            <select id="categoria" required>
+                <option value="Doces">Doces</option>
+                <option value="Salgados">Salgados</option>
+                <option value="Bolos">Bolos</option>
+                <option value="Outros">Outros</option>
+            </select>
+
+            <label>Ingredientes</label>
+            <textarea id="ingredientes" required
+                placeholder="Digite os ingredientes"></textarea>
+
+            <label>Modo de preparo</label>
+            <textarea id="preparo" required
+                placeholder="Explique como preparar"></textarea>
+
+            <label>Link da foto (opcional)</label>
+            <input type="url" id="imagem"
+                placeholder="https://...">
+
+            <button type="submit" class="btn-salvar">
+                Salvar Receita
+            </button>
+
+        </form>
+    </div>
+</div>
+
+<!-- VISUALIZAÇÃO DA RECEITA -->
+
+<div class="modal" id="modalDetalhes">
+    <div class="modal-conteudo">
+        <button class="fechar" onclick="fecharDetalhes()">×</button>
+        <div id="conteudoDetalhes"></div>
+    </div>
+</div>
+
+<footer>
+    <p>🍓 Candy's Love's - Receitas da Vovó</p>
+    <p>Feito com amor! ❤️</p>
+</footer>
+
+</body>
+</html>
